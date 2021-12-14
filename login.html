@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TZGSite Reimagined | Login</title>
+    <link rel="shortcut icon" href="\thatzoegamer.png">
+  </head>
+  <body>
+    <h1>Login To Your TZG Account!!!</h1>
+    
+    <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Dew<span>Clarke</span></div>
+		</div>
+		<br>
+		<form name="login">
+		<div class="login">
+				<input type="text" placeholder="username" name="userid"><br>
+				<input type="password" placeholder="password" name="pswrd"><br>
+				<input type="button" onclick="check(this.form)" value="Login"/>
+		</div>
+      
+      </form>
+      
+      <style>
+        input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+}
+      </style>
+    
+    <script language="javascript">
+function check(form)
+{
+ 
+ if(form.userid.value == "rickastley" && form.pswrd.value == "rickroll")
+  {
+    window.open('https://www.youtube.com/c/dewclarke?sub_confirmation=1')
+  }
+  else if(form.userid.value == "aha" && form.pswrd.value == "cool")
+  {
+    window.open('https://www.youtube.com/c/dewclarke?sub_confirmation=1')
+  }
+ else
+ {
+   alert("Please subscribe to my channel for more coding!")
+  }
+}
+
+</script>
+      
+      
