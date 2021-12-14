@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TZGSite Reimagined... | Articles | New Website Update</title>
+    <link rel="shortcut icon" href="\thatzoegamer.png">
+  </head>
+  <body>
+    <h1>New Website Update!!!</h1>
+    
+    <p>Welcome To My Website!!!</p>
+    <p>If you are new, welcome!</p>
+    <p>Now Lets get started on the topic</p>
+    
+    <main>
+	<ul id="cards">
+		<li class="card" id="card_1">
+			<div class="card__content">
+				<div>
+					<h1>Login Screen!!!</h1>
+          <p>We Got A New Login Screen And With The Login Screen, You Can See Your Own Private Resaults!!! Check it out with the button below</p>
+          <p><a href="\login.html" class="btn btn--accent">Check it out!!!</a></p>
+				</div>
+				<figure>
+					<img src="\Screenshot 2021-12-14 6.24.02 PM.png" alt="Image description">
+				</figure>
+			</div>
+		</li>
+		<li class="card" id="card_2">
+			<div class="card__content">
+				<div>
+					<h1>Status Page!!!</h1>
+          <p>Are my bots down? are you waiting for them to get back up and running? Well Than Check out the status page!!! it is always up-to-date so you can see it when you need it</p>
+          <p><a href="https://statustzg.statuspage.io/">Check it out for yourself</a></p>
+				</div>
+				<figure>
+					<img src="\Screenshot 2021-12-14 6.27.19 PM.png" alt="Image description">
+				</figure>
+			</div>
+		</li>
+		<li class="card" id="card_3">
+			<div class="card__content">
+				<div>
+					<h2>Netube Originals +</h2>
+					<p>Netube Originals +, Netube origianls + (A Video Software like Netflix) will be released on my website soon with lots of content you will enjoy for free and no copyrights and no getting sued!!!</p>
+					<p>Link Will Be Coming Soon...</p>
+				</div>
+				<figure>
+					<img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-3.jpg" alt="Image description">
+				</figure>
+			</div>
+		</li>
+		<li class="card" id="card_4">
+			<div class="card__content">
+				<div>
+					<h2>Support, Discord And Article Pages</h2>
+          <p><strong>The Support page,</strong> there when you need it the most! Now we included more ways to chat with tzg staff, phone call, text, Zoho Tickets And Emails, <strong>Discord Page,</strong> You Can go to the discord page to find my bots and my discord server! <strong>Article Pages</strong> See All The Articles Alot Of Bloggers have made on my website!!!</p>
+					<p><a href="\nav.html" class="btn btn--accent">Go Back To Navigation</a></p>
+				</div>
+				<figure>
+					<img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-2.jpg" alt="Image description">
+				</figure>
+			</div>
+		</li>
+	</ul>
+</main>
+<aside>
+	
+</aside>
+    
+    <style>
+      :root {
+	--card-height: 40vw;
+	--card-margin: 4vw;
+	--card-top-offset: 1em;
+	--numcards: 4;
+	--outline-width: 0px;
+}
+
+#cards {
+	padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
+	margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
+}
+
+#card_1 {
+	--index: 1;
+}
+
+#card_2 {
+	--index: 2;
+}
+
+#card_3 {
+	--index: 3;
+}
+
+#card_4 {
+	--index: 4;
+}
+
+.card {
+	position: sticky;
+	top: 0;
+	padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+@supports (animation-timeline: works) {
+
+	@scroll-timeline cards-element-scrolls-in-body {
+		source: selector(body);
+		scroll-offsets:
+			/* Start when the start edge touches the top of the scrollport */
+			selector(#cards) start 1,
+			/* End when the start edge touches the start of the scrollport */
+			selector(#cards) start 0
+		;
+		start: selector(#cards) start 1; /* Start when the start edge touches the top of the scrollport */
+		end: selector(#cards) start 0; /* End when the start edge touches the start of the scrollport */
+		time-range: 4s;
+	}
+
+	.card {
+		--index0: calc(var(--index) - 1); /* 0-based index */
+		--reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+		--reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+	}
+	
+	.card__content {
+		transform-origin: 50% 0%;
+		will-change: transform;
+
+		--duration: calc(var(--reverse-index0) * 1s);
+		--delay: calc(var(--index0) * 1s);
+
+		animation: var(--duration) linear scale var(--delay) forwards;
+		animation-timeline: cards-element-scrolls-in-body;
+	}
+
+	@keyframes scale {
+		to {
+			transform:
+				scale(calc(
+					1.1
+					-
+					calc(0.1 * var(--reverse-index))
+				));
+		}
+	}
+}
+
+/** DEBUG **/
+
+#debug {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
+#debug::after {
+  content: " Show Debug";
+  margin-left: 1.5em;
+  color: white;
+  white-space: nowrap;
+}
+
+#debug:checked ~ main {
+  --outline-width: 1px;
+}
+
+
+/** PAGE STYLING **/
+
+* { /* Poor Man's Reset */
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+header,
+main {
+	width: 80vw;
+	margin: 0 auto;
+}
+
+
+#cards {
+	list-style: none;
+	outline: calc(var(--outline-width) * 10) solid blue;
+	
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--numcards), var(--card-height));
+	gap: var(--card-margin);
+}
+
+.card {
+	outline: var(--outline-width) solid hotpink;
+}
+
+.card__content {
+	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+	background: rgb(255, 255, 255);
+	color: rgb(10, 5, 7);
+	border-radius: 1em;
+	overflow: hidden;
+
+	display: grid;
+	grid-template-areas: "text img";
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+
+	align-items: stretch;
+	outline: var(--outline-width) solid lime;
+}
+
+.card__content > div {
+	grid-area: text;
+	width: 80%;
+	place-self: center;
+	text-align: left;
+
+	display: grid;
+	gap: 1em;
+	place-items: start;
+}
+
+.card__content > figure {
+	grid-area: img;
+	overflow: hidden;
+}
+
+.card__content > figure > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.btn {
+	background: rgb(188 87 36);
+	color: rgb(255 255 255);
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5em;
+	border-radius: 0.25em;
+}
+
+aside {
+	width: 50vw;
+	margin: 0 auto;
+	text-align: left;
+}
+
+aside p {
+	margin-bottom: 1em;
+}
+    </style>
+    
+    	  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2731198,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
