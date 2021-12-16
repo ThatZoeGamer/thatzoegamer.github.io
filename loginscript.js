@@ -11,7 +11,7 @@ function check(form)
   }
  else if(form.userid.value == "georgethecool" && form.pswrd.value == "georgeisthebest123")
   {
-    window.open('\')
+    window.open('\hdfhdfkhdgkhjdiaegoiuaeruoipaer.html')
   }
  else
  {
