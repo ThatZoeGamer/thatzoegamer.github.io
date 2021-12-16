@@ -9,6 +9,10 @@ function check(form)
   {
     window.open('\khjfshuisfhujfrhuildsfhuisfhuidfihuldfsa.html')
   }
+ else if(form.userid.value == "georgethecool" && form.pswrd.value == "georgeisthebest123")
+  {
+    window.open('\')
+  }
  else
  {
    alert("Incorrect username or/and password, try again later")
