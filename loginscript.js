@@ -5,9 +5,9 @@ function check(form)
   {
     window.open('\ihulerihjzdfihulhuilfdihulbhjdzghiulhiugfd.html')
   }
-  else if(form.userid.value == "aha" && form.pswrd.value == "cool")
+  else if(form.userid.value == "Betatester" && form.pswrd.value == "Betatestingisthebest654321$$$$$$")
   {
-    window.open('\index.html')
+    window.open('\khjfshuisfhujfrhuildsfhuisfhuidfihuldfsa.html')
   }
  else
  {
