@@ -19,7 +19,7 @@ function check(form)
   icon: 'error',
   title: "Incorrect username/password",
   text: 'You have entered the wrong username/password, if you think this is a mistake, contact support',
-  footer: 'helo'
+  footer: ''
 })
   }
 }
