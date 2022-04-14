@@ -19,7 +19,7 @@ function check(form)
   icon: 'success',
   title: "Signed out successfully",
   text: 'You have signed out successfully!',
-  footer: ''
+  footer: 'helo'
 })
   }
 }
