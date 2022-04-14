@@ -16,9 +16,9 @@ function check(form)
  else
  {
    Swal.fire({
-  icon: 'success',
-  title: "Signed out successfully",
-  text: 'You have signed out successfully!',
+  icon: 'error',
+  title: "Incorrect username/password",
+  text: 'You have entered the wrong username/password, if you think this is a mistake, contact support',
   footer: 'helo'
 })
   }
