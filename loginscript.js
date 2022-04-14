@@ -15,7 +15,12 @@ function check(form)
   }
  else
  {
-   alert("Incorrect username or/and password, try again later")
+   Swal.fire({
+  icon: 'success',
+  title: "Signed out successfully",
+  text: 'You have signed out successfully!',
+  footer: ''
+})
   }
 }
 
