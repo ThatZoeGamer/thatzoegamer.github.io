@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "thatzoegamer.us.to",
+  "Id": "b9eee7d7-1fe5-4db0-9970-7060b0188d8b"
+}
